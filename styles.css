@@ -1,0 +1,291 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+  }
+  html, body, .grid-container { height: 100%; margin: 0; font-family: roboto; }
+  
+  /*Navbar*/
+
+  .nav{
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    align-items: center;
+    background-color: #F4F4F4;
+    height: 80px;
+    padding: 0px 40px;
+    color: #ED3237;
+    position: relative;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+}
+
+    .nav__options{
+      display: flex;
+      justify-content: space-between;
+    }
+
+        .nav__search{
+            width: 40%;
+            padding: 10px;
+        }
+
+        .nav__search:focus{
+          outline: 1px solid #ED3237;
+      }
+
+        .nav__search, .nav__select{
+            height: 50px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .nav__select{
+          width: 30%;
+      }
+
+        .nav__select:focus{
+            outline: 1px solid #ED3237;
+        }
+
+        .nav__carrinho, .nav__entrar{
+            display: flex;
+            align-items: center;
+        }
+
+        .nav__entrar__svg, .nav__carrinho__svg{
+            margin-right: 10px;
+        }
+
+        .nav__logo{
+          width: 100%;
+        }
+
+        /*Popup*/
+        .nav__popup{
+          display: none;
+        }
+
+        .nav__popupAppear{
+          position: absolute;
+          right: 2rem;
+          top: 4rem;
+          background: #F8F8F8;
+          border-radius: 10px;
+          box-shadow: 0 0 10px rgba(0,0,0,0.6);
+        }
+
+        .nav__popupAppear h3{
+          background: #F09035
+          ;
+          color: #fff;
+          padding: 5px;
+        }
+
+        .nav__popupAppear ul, .nav__popupAppear p{
+          color: #000;
+        }
+
+        .nav__popupAppear h4{
+          margin-bottom: 10px;
+        }
+
+        .nav__popupAppear ul{
+          padding: 0 40px;
+        }
+
+        .nav__popupAppear div{
+          padding: 10px;
+        }
+
+        .nav__entrar p, .nav__carrinho p{
+          cursor: pointer;
+        }
+  
+  
+  /*Container*/
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-areas:
+      "sanduiche sanduiche formulario formulario"
+      "sanduiche sanduiche formulario formulario"
+      "sanduiche sanduiche formulario formulario";
+  }
+  
+    .grid__sanduiche { 
+      grid-area: sanduiche; 
+    }
+  
+
+  /*Formulario*/
+
+  .grid__formulario {
+    grid-area: formulario; 
+  }
+  
+    .grid__ingredientes{
+      display: flex;
+      flex-direction: column;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding: 50px;
+    }
+  
+    .grid__adicionarIngredientes{
+      align-self: flex-end;
+      color: #dc0505;
+    }
+
+  
+    .grid__adicionar{
+      display:flex; 
+      justify-content: space-between;
+      align-items:stretch;
+    }
+
+    .grid__opcoes{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+
+    .grid__opcoes span, .grid__opcoes button,  .grid__opcoes div, .grid__talher, .grid__qtdIngredientes{
+      margin-bottom: 20px;
+    }
+
+    .grid__precos{
+      display: flex;
+    }
+
+    .grid__valorTotal{
+      margin-right: 10px;
+    }
+
+
+    .grid__checkbox{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    } 
+
+  
+  /*Estilos*/
+
+  .grid__valorTotal, .grid__valorIngrediente{
+    color: #DC6E05;
+  }
+
+  .grid__valorIngrediente{
+    border-bottom: 1px solid #DC6E05;
+    padding-bottom: 10px;
+  }
+
+  .grid__sanduiche, .grid__formulario{
+    padding: 30px 50px;
+  }
+
+  .grid__qtdSanduiches button{
+    color: #dc0505;
+  }
+
+  .grid__qtdSanduiches, .grid__btnAdicionar{
+    border: 1px solid  #DC6E05;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .grid__qtdSanduiches{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 40%;
+  }
+
+  .grid__talher, .grid__qtdIngredientes{
+    background:rgba(253, 215, 14, 0.2);
+    height: 50px;
+    padding: 5px;
+  }
+
+  .grid__img{
+    width:100%;
+    height: 100%;
+  }
+
+  .grid--valor-anterior{
+    text-decoration: line-through;
+  }
+
+  .grid__btnAdicionar{
+    background-color: #DC6E05;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+
+  .grid__btnAdicionar:hover{
+    background: #f78820;
+  }
+  
+  button{
+    background:none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .card img, .card div, .card h1 { 
+    margin-bottom: 40px;
+  }
+
+  .card img, .card div { 
+    color: #4E4E4E;
+  }
+
+  @media (max-width: 1100px){
+
+    /*Navbar*/
+
+    .nav{
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      background-color: #F4F4F4;
+      height: 80px;
+      padding: 0px 40px;
+      color: #ED3237;
+    }
+
+    .nav__options{
+      display: none;
+    }
+
+    /*Card*/
+
+    .grid-container {
+      display: block;
+      grid-template-areas: none;
+    }
+
+    .grid__ingredientes{
+      display: flex;
+      flex-direction: column;
+      border: none;
+      border-radius: none;
+      padding: 0 0 10px 0;
+    }
+
+    .grid__sanduiche, .grid__formulario {
+      padding: 10px 20px 0px 20px;
+  }
+
+  .card img, .card div, .card h1 { 
+    margin-bottom: 10px;
+  }
+  
+  }
